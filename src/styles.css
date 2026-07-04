@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Baloo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #26325f;
+  background:
+    radial-gradient(circle at top left, #fff0a8 0, transparent 28%),
+    radial-gradient(circle at bottom right, #aee1ff 0, transparent 32%),
+    linear-gradient(135deg, #fffaf0, #f5fbff);
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 22px;
+}
+
+.hero-card,
+.game-screen {
+  width: min(1180px, 100%);
+  background: rgba(255, 255, 255, 0.86);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 34px;
+  padding: 34px;
+  box-shadow: 0 28px 80px rgba(41, 60, 110, 0.16);
+}
+
+.reward-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stars-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 12px 22px;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(40, 58, 100, 0.12);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.reset-button,
+.ghost-button,
+.primary-button,
+.secondary-button,
+.sound-button {
+  border: 0;
+  cursor: pointer;
+  font-weight: 900;
+  border-radius: 999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reset-button,
+.ghost-button {
+  background: #edf2ff;
+  color: #32416e;
+  padding: 12px 22px;
+  font-size: 1rem;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #ffcf56, #ff8db7);
+  color: #26325f;
+  padding: 16px 30px;
+  font-size: 1.25rem;
+  box-shadow: 0 14px 30px rgba(255, 141, 183, 0.28);
+}
+
+.secondary-button,
+.sound-button {
+  background: #ffffff;
+  color: #26325f;
+  padding: 16px 26px;
+  font-size: 1.15rem;
+  box-shadow: 0 12px 28px rgba(40, 58, 100, 0.12);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 28px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 12px;
+  background: #fff0a8;
+  color: #7b5b00;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3.4rem, 8vw, 6.4rem);
+  line-height: 0.95;
+  font-weight: 1000;
+  color: #24305f;
+}
+
+.hero-text {
+  margin: 20px auto 0;
+  max-width: 780px;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  color: #5a6889;
+}
+
+.panda-card {
+  width: min(620px, 100%);
+  margin: 28px auto 34px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #f3f9ff;
+  border: 3px solid #ffffff;
+  border-radius: 30px;
+  padding: 18px 22px;
+  box-shadow: 0 18px 44px rgba(40, 58, 100, 0.12);
+}
+
+.panda-face {
+  width: 96px;
+  height: 96px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: #fff5c7;
+  font-size: 4.2rem;
+}
+
+.panda-name,
+.panda-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #70809f;
+  font-size: 1rem;
+  font-weight: 1000;
+}
+
+.panda-message {
+  margin: 4px 0 0;
+  color: #26325f;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.game-card {
+  min-height: 240px;
+  border: 0;
+  border-radius: 30px;
+  padding: 28px 22px;
+  background: #ffffff;
+  color: #26325f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 20px 50px rgba(40, 58, 100, 0.12);
+  text-align: center;
+}
+
+.game-card.active:first-child {
+  background: linear-gradient(135deg, #ffe574, #ff9fc4);
+}
+
+.game-card.active:nth-child(2) {
+  background: linear-gradient(135deg, #b7e6ff, #d8c7ff);
+}
+
+.game-card.active:nth-child(3) {
+  background: linear-gradient(135deg, #ffd5a8, #b8f7d4);
+}
+
+.game-card.locked {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.game-icon {
+  font-size: clamp(4.6rem, 10vw, 6.2rem);
+  line-height: 1;
+}
+
+.game-title {
+  font-size: 1.65rem;
+  font-weight: 1000;
+}
+
+.game-description {
+  font-size: 1.1rem;
+  color: #566789;
+  font-weight: 800;
+  max-width: 280px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.progress-wrap {
+  margin-bottom: 22px;
+}
+
+.progress-label {
+  font-weight: 900;
+  color: #5d6c8d;
+  margin-bottom: 8px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 14px;
+  background: #e8efff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffcf56, #ff8db7);
+  border-radius: 999px;
+}
+
+.letter-card {
+  margin: 28px auto;
+  max-width: 760px;
+  background: #ffffff;
+  border-radius: 34px;
+  padding: 34px 24px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(40, 58, 100, 0.14);
+}
+
+.big-letter {
+  margin: 0;
+  font-size: clamp(6rem, 16vw, 9rem);
+  line-height: 1;
+  font-weight: 1000;
+  color: #25325f;
+  filter: drop-shadow(0 14px 18px rgba(45, 61, 100, 0.16));
+}
+
+.emoji {
+  font-size: clamp(6rem, 16vw, 9rem);
+  line-height: 1;
+}
+
+.word-text {
+  margin: 16px 0 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 1000;
+  color: #26325f;
+}
+
+.action-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.music-button {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  min-height: 54px;
+  padding: 14px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #25325c;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 14px 35px rgba(45, 61, 100, 0.18);
+}
+
+@media (max-width: 900px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card,
+  .game-screen {
+    padding: 22px;
+    border-radius: 28px;
+  }
+
+  .panda-card {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-shell {
+    padding: 20px 12px 90px;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .panda-face {
+    width: 78px;
+    height: 78px;
+    font-size: 3.3rem;
+  }
+
+  .panda-message {
+    font-size: 1.05rem;
+  }
+
+  .game-icon {
+    font-size: 4.5rem;
+  }
+
+  .top-row,
+  .reward-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .music-button {
+    right: 12px;
+    bottom: 12px;
+    min-height: 48px;
+    padding: 12px 16px;
+  }
+}

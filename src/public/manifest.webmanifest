@@ -1,0 +1,20 @@
+{
+  "name": "Kids Learning Hub",
+  "short_name": "Kids Hub",
+  "description": "A fun learning game for kids to learn letters, numbers, colors, and earn stars.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fffaf0",
+  "theme_color": "#ffcf56",
+  "categories": ["education", "kids", "games"],
+  "icons": [
+    {
+      "src": "/icons/panda-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
